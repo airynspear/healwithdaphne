@@ -56,6 +56,34 @@
   font-weight: 600;
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+
+.heading {
+  margin-top: 2rem;
+  font-family: var(--font-cormorant), serif;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 1.2;
+  text-align: center;
+  color: #fffaf0;
+}
+
+.subtext {
+  margin-top: 1rem;
+  max-width: 600px;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #bfbfbf;
+  text-align: center;
+}
+
 .ctas {
   display: flex;
   gap: 16px;
@@ -68,10 +96,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -163,6 +188,6 @@ a.secondary {
 
 @media (prefers-color-scheme: dark) {
   .logo {
-    filter: invert();
+    filter: invert(100%);
   }
 }

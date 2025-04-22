@@ -7,18 +7,30 @@ import { useTheme } from "@/components/Providers/ThemeProvider";
 export default function Home() {
   const { theme } = useTheme();
 
-  const logoSrc =
-    theme === "light" ? "/assets/logo-light.png" : "/assets/logo.png";
-
   return (
     <div className={styles.hero}>
-      <Image
-        src={logoSrc}
-        alt="Heal with Daphne Logo"
-        width={200}
-        height={285}
-        priority
-      />
+      <div className={styles.logoWrapper}>
+        <Image
+          src="/assets/logo.png"
+          alt="Logo Dark"
+          width={200}
+          height={285}
+          priority
+          className={`${styles.logo} ${
+            theme === "dark" ? styles.visible : styles.hidden
+          }`}
+        />
+        <Image
+          src="/assets/logo-light.png"
+          alt="Logo Light"
+          width={200}
+          height={285}
+          priority
+          className={`${styles.logo} ${
+            theme === "light" ? styles.visible : styles.hidden
+          }`}
+        />
+      </div>
       <div className={styles.content}>
         <h1 className={styles.heading}>Welcome to Heal with Daphne</h1>
         <p className={styles.subtext}>

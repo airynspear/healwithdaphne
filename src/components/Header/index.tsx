@@ -71,6 +71,9 @@ export default function Header() {
       </div>
 
       <nav className={styles.nav}>
+        <div className={styles.circle}></div>
+        <div className={styles.circleSmall}></div>
+
         <Link href="/" className={styles.navItem}>
           Home
         </Link>
@@ -99,6 +102,8 @@ export default function Header() {
         <Link href="/contact" className={styles.navItem}>
           Contact
         </Link>
+        <div className={`${styles.circle} ${styles.circleRight}`}></div>
+        <div className={`${styles.circleSmall} ${styles.circleRight}`}></div>
       </nav>
 
       <div className={styles.actions}>

@@ -6,7 +6,15 @@
   background-color: transparent;
   margin-top: auto;
   p {
-    color: var(--font-light);
+    color: var(--font-lighter);
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    p {
+      font-size: 0.8rem;
+    }
   }
 }

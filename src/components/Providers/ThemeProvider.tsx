@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext({
-  theme: "dark",
+  theme: "light",
   toggleTheme: () => {},
 });
 
@@ -16,7 +16,7 @@ export default function ThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

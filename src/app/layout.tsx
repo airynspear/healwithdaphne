@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./styles/globals.scss";
 import ThemeProvider from "@/components/Providers/ThemeProvider";
 import Header from "@/components/Header";
@@ -25,6 +26,13 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
+const playfair = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+});
+
 export const metadata: Metadata = {
   title: "Heal With Daphne",
   description: "Healing through connection, touch, and intention.",
@@ -38,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${playfair.variable}`}
       >
         <ThemeProvider>
           <Header />

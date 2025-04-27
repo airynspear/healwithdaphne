@@ -1,21 +1,7 @@
 @use "./variables.scss" as *;
 
-/* Default (dark theme) */
+/* Default (light theme) */
 :root {
-  --background: #{$background-dark};
-  --foreground: #{$gray-light};
-  --text: #{$white};
-  --gray: #{$gray};
-  --gray-dark: #{$gray-dark};
-  --gold: #{$gold};
-  --gold-light: #{$gold-light};
-  --gold-dark: #{$gold-dark};
-  --font: #{$font-dark};
-  --font-light: #{font-lighter};
-}
-
-/* Light theme overrides */
-[data-theme="light"] {
   --background: #{$background-light};
   --foreground: #{$black};
   --text: #{$gray-dark};
@@ -25,7 +11,47 @@
   --gold-light: #{$gold-light};
   --gold-dark: #{$gold-dark};
   --font: #{$font-light};
-  --font-light: #{font-darker};
+  --font-light: #{$font-darker};
+
+  --gold-border: #fefdde;
+  --gold-bg-dark: #c8c1aa;
+
+  --link: #45433c;
+  --button-bg: #ddd8c5;
+
+  --switch-track: #333;
+  --switch-thumb: #fefdde;
+
+  --black-gold: $black;
+
+  --mobile-nav-hover: #c8c1aa;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+  --background: #{$background-dark};
+  --foreground: #{$gray-light};
+  --text: #{$white};
+  --gray: #{$gray};
+  --gray-dark: #{$gray-dark};
+  --gold: #{$gold};
+  --gold-light: #{$gold-light};
+  --gold-dark: #{$gold-dark};
+  --font: #{$font-dark};
+  --font-light: #{$font-lighter};
+
+  --gold-border: #826b21;
+  --gold-bg-dark: #181304;
+
+  --link: #d2cdbf;
+  --button-bg: #3d3007;
+
+  --switch-track: #ddb533;
+  --switch-thumb: #d2cdbf;
+
+  --black-gold: var(--primary-light);
+
+  --mobile-nav-hover: #28220e;
 }
 
 html,
@@ -40,10 +66,9 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background-color: var(--background);
-  font-family: var(--font-cormorant), Arial, Helvetica, sans-serif;
+  font-family: var(--font-playfair), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {

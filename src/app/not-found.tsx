@@ -33,7 +33,8 @@ export default function NotFound() {
         />
       </div>
       <p className={styles.subtext}>
-        This space is gently unfolding. Thank you for your presence.
+        <span>This space is gently unfolding.</span>
+        <span>Thank you for your presence.</span>
       </p>
     </div>
   );

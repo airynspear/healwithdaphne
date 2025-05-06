@@ -3,6 +3,7 @@
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "@/components/UI/Button";
 import CustomSwitch from "@/components/UI/Switch";
 import { useTheme } from "@/components/Providers/ThemeProvider";
@@ -16,6 +17,14 @@ export default function Header() {
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setMobileMenuOpen(false);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     setIsMounted(true); // Safe to access window after mounted

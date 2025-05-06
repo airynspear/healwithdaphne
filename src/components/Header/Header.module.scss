@@ -198,6 +198,13 @@
       color: var(--black-gold);
       background-color: var(--mobile-nav-hover);
     }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      background-color: transparent;
+      box-shadow: none;
+    }
   }
 
   .mobileMenuHeader {

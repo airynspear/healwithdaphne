@@ -10,17 +10,20 @@
   --gold: #{$gold};
   --gold-light: #{$gold-light};
   --gold-dark: #{$gold-dark};
-  --font: #{$font-light};
-  --font-light: #{$font-darker};
 
-  --gold-border: #fefdde;
-  --gold-bg-dark: #c8c1aa;
+  --heading: #{$text-heading-light};
+  --sub-heading: #c58a20;
+  --text: #{$font-dark};
+
+  --gold-border: #cea71d;
+  --gold-bg-dark: #f4f1e8;
 
   --link: #45433c;
+  --link-hover: #000000;
   --button-bg: #ddd8c5;
 
-  --switch-track: #333;
-  --switch-thumb: #fefdde;
+  --switch-track: #7b6200;
+  --switch-thumb: #fff;
 
   --black-gold: $black;
 
@@ -37,13 +40,16 @@
   --gold: #{$gold};
   --gold-light: #{$gold-light};
   --gold-dark: #{$gold-dark};
-  --font: #{$font-dark};
-  --font-light: #{$font-lighter};
+
+  --heading: #{$text-heading-dark};
+  --sub-heading: #cb9b00;
+  --text: #{$font-light};
 
   --gold-border: #826b21;
   --gold-bg-dark: #181304;
 
   --link: #d2cdbf;
+  --link-hover: #fff;
   --button-bg: #3d3007;
 
   --switch-track: #ddb533;

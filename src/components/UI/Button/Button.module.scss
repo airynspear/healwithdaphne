@@ -17,13 +17,13 @@
 }
 
 .primary {
-  border: var(--button-bg) 1px solid;
-  background-color: var(--button-bg);
+  border: var(--gold-border) 1px solid;
+  background-color: var(--gold-bg-dark);
   color: var(--link);
 
   &:hover {
-    border: var(--gold-border) 1px solid;
-    background-color: var(--gold-bg-dark);
+    color: var(--link-hover);
+    background-color: var(--font);
   }
 }
 

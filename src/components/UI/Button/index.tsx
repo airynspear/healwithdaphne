@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 
 type ButtonProps = {
   href?: string;
+  target?: string;
   onClick?: () => void;
   children: ReactNode;
   variant?: "primary" | "secondary";
@@ -14,6 +15,7 @@ type ButtonProps = {
 
 export default function Button({
   href,
+  target,
   onClick,
   children,
   variant = "primary",
@@ -23,7 +25,7 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={className}>
+      <Link href={href} target={target} className={className}>
         {children}
       </Link>
     );

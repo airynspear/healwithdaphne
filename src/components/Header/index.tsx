@@ -108,7 +108,12 @@ export default function Header() {
 
       <div className={styles.actions}>
         <div className={styles.bookButton}>
-          <Button href="/book">Book a Session</Button>
+          <Button
+            href="https://book.heygoldie.com/Daphne-Mosko/checkout"
+            target="_blank"
+          >
+            Book a Session
+          </Button>
         </div>
 
         <div className={styles.switch}>

@@ -1,15 +1,15 @@
+// src/app/not-found.tsx
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/UI/Button";
-import styles from "./page.module.scss";
+import styles from "./styles/NotFound.module.scss";
 import { useTheme } from "@/components/Providers/ThemeProvider";
 
-export default function Home() {
+export default function NotFound() {
   const { theme } = useTheme();
 
   return (
-    <div className={styles.hero}>
+    <div className={styles.notFound}>
       <div className={styles.logoWrapper}>
         <Image
           src="/assets/logo.png"
@@ -32,22 +32,9 @@ export default function Home() {
           }`}
         />
       </div>
-      <div className={styles.content}>
-        <h1 className={styles.heading}>
-          <span>Life is full of beautiful mysteries.</span>
-          <span className={styles.subHeading}>
-            Your pain doesn’t need to be one of them.
-          </span>
-        </h1>
-        <div className={styles.bookButton}>
-          <Button
-            href="https://book.heygoldie.com/Daphne-Mosko/checkout"
-            target="_blank"
-          >
-            Book a Session
-          </Button>
-        </div>
-      </div>
+      <p className={styles.subtext}>
+        This space is gently unfolding. Thank you for your presence.
+      </p>
     </div>
   );
 }

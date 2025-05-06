@@ -25,9 +25,9 @@
   --switch-track: #7b6200;
   --switch-thumb: #fff;
 
-  --black-gold: $black;
+  --black-gold: #{$black};
 
-  --mobile-nav-hover: #c8c1aa;
+  --mobile-nav-hover: #f5f1e8;
 }
 
 /* Dark theme overrides */
@@ -57,7 +57,7 @@
 
   --black-gold: var(--primary-light);
 
-  --mobile-nav-hover: #28220e;
+  --mobile-nav-hover: #1e190a;
 }
 
 html,

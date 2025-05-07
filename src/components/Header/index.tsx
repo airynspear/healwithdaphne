@@ -68,7 +68,7 @@ export default function Header() {
           }`}
         />
         <Image
-          src="/assets/logo-text-light.png"
+          src="/assets/logo-text-light-new.png"
           alt="Logo Light"
           width={180}
           height={78}

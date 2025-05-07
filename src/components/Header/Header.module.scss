@@ -118,7 +118,7 @@
 
     &:hover {
       color: var(--font-light);
-      background-color: var(--black-gold);
+      background-color: var(--background);
     }
   }
 }
@@ -195,7 +195,7 @@
     }
 
     &:hover {
-      color: var(--black-gold);
+      //color: var(--black-gold);
       background-color: var(--mobile-nav-hover);
     }
 

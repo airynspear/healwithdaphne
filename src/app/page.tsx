@@ -22,7 +22,7 @@ export default function Home() {
           }`}
         />
         <Image
-          src="/assets/logo-light-new.png"
+          src="/assets/logo-light.png"
           alt="Logo Light"
           width={200}
           height={285}

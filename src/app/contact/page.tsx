@@ -1,6 +1,16 @@
-import type { Metadata } from 'next';
 import { Button } from '@mantine/core';
 import { PageIntro, TextLink } from '@/components/ui';
-import { practice } from '@/lib/content';
-export const metadata: Metadata = { title: 'Contact & Booking' };
-export default function Contact() { return <><PageIntro eyebrow="CONTACT & BOOKING" title="Let’s begin with a conversation."><p>Questions about bodywork or arranging a session? Reach Daphne through her published practitioner profile.</p></PageIntro><section className="shell grid gap-12 pb-24 md:grid-cols-[1.1fr_0.9fr]"><div className="contact-panel"><p className="eyebrow">REACH DAPHNE</p><h2>A thoughtful first step.</h2><p>Online booking is not connected to this website yet. Daphne’s Anatomy Trains profile includes a “Contact Daphne” form where you can ask about current availability and sessions.</p><Button component="a" href={practice.profileHref} target="_blank" rel="noopener noreferrer" fullWidth={false}>Visit Daphne’s contact profile <span className="ml-3" aria-hidden="true">↗</span></Button><p className="mt-5 mb-0 text-sm">Opens the Anatomy Trains website in a new tab. No message is sent from this page.</p></div><div className="self-center"><h3>Before arranging a visit</h3><p className="mt-5">Please confirm the current practice location, appointment length, rates, and any preparation directly with Daphne.</p><p>Her public practitioner profile lists Denver, Colorado; a current street address has not been confirmed here.</p><TextLink href="/faq">Explore common questions</TextLink></div></section></>; }
+import { office, practice } from '@/lib/content';
+import { pageMetadata } from '@/lib/metadata';
+
+export const metadata = pageMetadata('Contact & Booking', 'Contact Daphne Mosko by phone or email to arrange bodywork in East Boulder, or ask about appointments in Denver and Lone Tree.', '/contact');
+
+export default function Contact() {
+  return <>
+    <PageIntro eyebrow="CONTACT & BOOKING" title="Let’s begin with a conversation." />
+    <section className="shell grid items-start gap-12 pb-24 md:grid-cols-[1.1fr_0.9fr]">
+      <div className="contact-panel"><p className="eyebrow">REACH DAPHNE</p><h2>Book a Session</h2><p>Get in touch to arrange a session or ask a question.</p><dl className="contact-details"><div><dt>Phone</dt><dd><a href={practice.phoneHref}>{practice.phone}</a></dd></div><div><dt>Email</dt><dd><a href={practice.emailHref}>{practice.email}</a></dd></div></dl><Button component="a" href={practice.smsHref}>Text Daphne <span className="ml-3" aria-hidden="true">↗</span></Button><div className="mt-8"><TextLink href={practice.profileHref} newTab>Visit Daphne’s contact profile</TextLink></div></div>
+      <div><h2 className="contact-office-title">Office locations</h2><p>{office.home}</p><p>{office.additional}</p><div className="mt-8"><TextLink href="/sessions#appointments">Appointment options &amp; pricing</TextLink></div><div className="mt-6"><TextLink href="/faq">Questions before your visit</TextLink></div><div className="mt-10"><TextLink href={practice.reviewHref} newTab>Leave a Google review</TextLink></div></div>
+    </section>
+  </>;
+}

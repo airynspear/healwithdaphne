@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1072" height="1470" viewBox="0 0 1072 1470" fill="none">
+  <title>Heal with Daphne emblem</title>
+  <desc>Clean vector reconstruction of overlapping circles above a symmetrical lotus, in navy on a transparent background.</desc>
+  <defs>
+    <g id="left-petals" fill="#203f50">
+      <!-- Rear upright petal -->
+      <path d="M399 1069 Q393 1005 414 954 Q443 996 477 1015 L464 1081 Q446 1048 431 1035 L430 1091 Z"/>
+      <!-- Small outer petal -->
+      <path d="M244 1195 Q211 1144 184 1081 Q260 1098 309 1127 L323 1174 Q283 1152 248 1142 L273 1198 Z"/>
+      <!-- Tall spreading petal -->
+      <path d="M499 1375 Q306 1252 289 997 Q414 1065 454 1144 L464 1206 Q407 1119 333 1072 Q352 1256 499 1375 Z"/>
+      <!-- Low spreading petal -->
+      <path d="M501 1391 Q276 1393 119 1182 Q286 1173 378 1272 Q290 1229 197 1220 Q329 1354 501 1391 Z"/>
+    </g>
+  </defs>
+  <!-- Geometrically exact circles -->
+  <g stroke="#203f50" stroke-width="28">
+    <circle cx="528" cy="580" r="446"/>
+    <circle cx="528" cy="435" r="295"/>
+    <circle cx="528" cy="733" r="295"/>
+    <circle cx="528" cy="582" r="140"/>
+  </g>
+  <!-- Tapered lower enclosing arcs -->
+  <g fill="#203f50">
+    <path d="M253 558 C77 697 -4 957 111 1173 L159 1173 C15 970 81 714 253 558 Z"/>
+    <path d="M803 558 C979 697 1060 957 945 1173 L897 1173 C1041 970 975 714 803 558 Z"/>
+  </g>
+  <!-- Lotus petals are closed vector shapes, with transparent interiors -->
+  <use href="#left-petals"/>
+  <use href="#left-petals" transform="translate(1056 0) scale(-1 1)"/>
+  <path fill="#203f50" fill-rule="evenodd" d="M528 932 C443 1068 444 1220 511 1350 C480 1227 486 1118 521 1036 L535 1036 C570 1118 576 1227 545 1350 C612 1220 613 1068 528 932 Z"/>
+</svg>

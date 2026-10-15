@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Heal with Daphne
 
-## Getting Started
+Local website for Daphne Mosko’s bodywork practice. Next.js App Router, React, TypeScript, Mantine, Tailwind CSS, ESLint, and npm. No CMS, messaging backend, or affiliate tracking.
 
-First, run the development server:
+## Run locally
 
-```bash
+Use Node 22 (`nvm use`), matching the existing Vercel project, then:
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Production preview: `npm run build` then `npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```sh
+npm run lint
+npm run typecheck
+npm run build
+```
 
-## Learn More
+Cormorant Garamond and DM Sans are bundled from Fontsource packages and served locally through `next/font/local`; builds do not contact Google Fonts. Font licenses are included with their npm packages.
 
-To learn more about Next.js, take a look at the following resources:
+## Edit
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/lib/content.ts`: navigation, resource collections, FAQ, booking target, public profile URL, practice summary.
+- `src/theme.ts`: Mantine defaults and navy scale.
+- `src/app/globals.css`: shared palette, typography, layout styles; explicit layer order keeps Mantine and Tailwind predictable.
+- `src/app/**/page.tsx`: page-specific copy and server-rendered layouts.
+- `src/components/ui.tsx`: shared image placeholders, calls to action, page headings, resource previews.
+- `public/images/`: original abstract SVG image placeholders, not photographs or existing brand artwork. Replace through `PhotoPlaceholder` with approved local images and descriptive alt text. Use `next/image`, dimensions/sizes, and intentional crops.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Before launch
 
-## Deploy on Vercel
+See [CONTENT.md](./CONTENT.md) for factual sources, verification boundaries, and the approval checklist. Replace the three image placeholders with approved photographs (space, Daphne portrait, hands-on work). Approve all editorial copy and proposed session guidance. Confirm current practice details and services. Booking currently routes to `/contact`, which honestly links to the public Anatomy Trains contact form. Confirm a working scheduling URL before changing `practice.bookingHref`. No mail address or telephone number has been invented.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Resource collections are intentionally empty. Add only approved original posts, disclosed relationships, and approved videos. No social links or unavailable artwork have been fabricated. The shared header/footer brand uses the supplied `hwd-logo.svg` beside the name and tagline. The hero uses the supplied `hwd-logo-img-light.png` over the temporary image background.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Production uses the existing `airyns-projects/healwithdaphne` Vercel project, connected to `airynspear/healwithdaphne` on `main`. The confirmed production origin is `https://healwithdaphne.vercel.app`; indexing is enabled. No custom domain is currently attached. Confirm any future domain change separately, then update `metadataBase`. No application environment variables are required.
+
+## Dependency notes
+
+ESLint 9 is retained because the current Next.js React and accessibility plugins do not support ESLint 10. The install-time audit reported five high-severity findings in the development-only `eslint-config-next → @next/eslint-plugin-next → fast-glob → micromatch → braces` chain. npm’s proposed fix downgrades the Next lint config to 14.x, so it was not applied. Recheck upstream advisories during maintenance.

@@ -1,61 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Cormorant_Garamond } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
-import "./styles/globals.scss";
-import ThemeProvider from "@/components/Providers/ThemeProvider";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  weight: ["300", "400"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-cormorant",
-});
-
-const playfair = Playfair_Display({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-playfair",
-});
-
-export const metadata: Metadata = {
-  title: "Heal With Daphne",
-  description: "Healing through connection, touch, and intention.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${playfair.variable}`}
-      >
-        <ThemeProvider>
-          <Header />
-          <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
+import { Providers } from './providers';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { practice } from '@/lib/content';
+import './globals.css';
+const serif = localFont({ src: [{ path: '../../node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2', weight: '300 700', style: 'normal' }, { path: '../../node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-italic.woff2', weight: '300 700', style: 'italic' }], variable: '--font-cormorant', display: 'swap' });
+const sans = localFont({ src: '../../node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2', weight: '100 1000', variable: '--font-dm-sans', display: 'swap' });
+export const metadata: Metadata = { title: { default: 'Heal with Daphne | Bodywork with Daphne Mosko', template: '%s | Heal with Daphne' }, description: practice.description, metadataBase: new URL('https://healwithdaphne.vercel.app') };
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) { return <html lang="en" {...mantineHtmlProps}><head><ColorSchemeScript forceColorScheme="light" /></head><body className={`${serif.variable} ${sans.variable}`}><Providers><a href="#main-content" className="skip-link">Skip to content</a><Header /><main id="main-content">{children}</main><Footer /></Providers></body></html>; }

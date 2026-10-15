@@ -3,13 +3,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Burger, Button, Drawer, Menu } from '@mantine/core';
 import { useState } from 'react';
+import { useWindowScroll } from '@mantine/hooks';
 import { Brand } from '@/components/brand';
 import { navigation, practice, resources } from '@/lib/content';
 export function Header() {
   const [opened, setOpened] = useState(false);
+  const [{ y: scrollY }] = useWindowScroll();
   const pathname = usePathname();
   const navLink = (item: {label: string; href: string}, mobile = false) => <Link key={item.href} className={mobile ? 'mobile-link' : 'nav-link'} href={item.href} aria-current={pathname === item.href ? 'page' : undefined} onClick={() => setOpened(false)}>{item.label}</Link>;
-  return <header className="site-header">
+  return <header className="site-header" data-scrolled={scrollY > 0 || undefined}>
     <div className="shell flex min-h-24 items-center justify-between gap-6">
       <Brand />
       <nav aria-label="Main navigation" className="desktop-nav items-center gap-7">

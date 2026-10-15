@@ -113,6 +113,7 @@
   .intro-copy { max-width: 640px; margin-top: 26px; font-size: 1.1rem; }
   .article-copy p { max-width: 660px; }
   .article-copy h2 { margin-bottom: 28px; }
+  .bio-subheading { color: #8a7045; margin-top: .2em; }
   .detail-line { border-top: 1px solid var(--border); padding: 28px 0; }
   .detail-line h3 { margin-bottom: 16px; }
   .empty-state { border-block: 1px solid var(--border); padding: 65px 0; max-width: 800px; }
@@ -180,6 +181,23 @@
   .faq-control:hover,.faq-item[data-active] { background: var(--surface); }
   .mantine-Accordion-chevron { color: var(--accent); }
 
+  /* Each normal-flow window independently clips a slower-moving background layer. */
+  .parallax-divider { position: relative; width: 100%; height: var(--divider-height, 100vh); overflow: hidden; overflow: clip; isolation: isolate; background: var(--photo-backdrop); }
+  .parallax-divider-image { position: absolute; inset: 0; }
+  .parallax-divider-image img { object-fit: cover; object-position: var(--divider-position, center); }
+  .parallax-divider[data-moving] .parallax-divider-image { will-change: transform; }
+
+  .hero-background-section { position: relative; isolation: isolate; overflow: clip; display: grid; align-items: center; min-height: 100svh; background: var(--photo-backdrop); }
+  .hero-background-image { object-fit: cover; object-position: 50% 52%; z-index: -2; }
+  .hero-content .hero-copy { max-width: 960px; margin-inline: auto; text-align: center; }
+  .hero-content .hero-benefits { justify-content: center; }
+  .hero-content { --ink: #f3ede0; --muted: #c7bfae; --accent: #e4cc77; --emphasis: #182f40; --primary: #182f40; --primary-hover: #203e53; --on-primary: #fff; color: var(--ink); }
+  .hero-content .eyebrow { color: #182f40; }
+  .hero-explore-button { background: rgb(197 163 77 / 75%); color: #182f40; border-color: rgb(197 163 77 / 75%); }
+  .hero-explore-button:hover:where(:not(:disabled, [data-disabled], [data-loading])) { background: rgb(197 163 77 / 100%); color: #182f40; border-color: rgb(197 163 77 / 100%); }
+  .hero-celestial { position: absolute; top: 32px; right: max(28px, calc((100% - 1280px) / 2)); width: 200px; height: 210px; pointer-events: none; }
+  .hero-celestial img { object-fit: contain; }
+
 }
 @media (max-width: 1150px) {
   .shell { width: calc(100% - 64px); }
@@ -208,11 +226,18 @@
   .brand-copy { gap: 7px; }
   .brand-tagline { font-size: clamp(.43rem, 1.65vw, .54rem); letter-spacing: .14em; }
   .hero { padding-block: 36px 48px; }
+  .hero-background-section { min-height: 100svh; }
+  .hero-background-section .hero { padding-block: 112px 52px; }
+  .hero-background-image { object-position: 44% 50%; }
+  .hero-celestial { top: 18px; right: 20px; width: 72px; height: 88px; }
   .hero-copy { padding-bottom: 0; }
   .hero h1 { font-size: clamp(3.5rem,13vw,5.5rem); }
   .hero-description { font-size: 1rem; }
   .hero-footnote { margin-top: 25px; }
   .hero-photo { height: 430px; border-bottom-right-radius: 90px; }
+  .parallax-divider { height: var(--divider-mobile-height, 100svh); }
+  .parallax-divider-image { top: 0 !important; height: 100% !important; transform: none !important; }
+  .parallax-divider-image img { object-position: var(--divider-mobile-position, center); }
   .photo-placeholder figcaption { bottom: 20px; left: 20px; max-width: calc(100% - 40px); }
   .intro-section,.expect-section { padding-block: 60px; }
   .portrait-photo { width: 100%; height: 380px; }
@@ -228,4 +253,24 @@
 }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-divider-image { top: 0 !important; height: 100% !important; transform: none !important; will-change: auto !important; }
+}
+
+@supports (animation-timeline: view()) and (animation-range: cover 0% cover 100%) {
+  .parallax-divider { view-timeline-name: --divider-scroll; view-timeline-axis: block; }
+  .parallax-divider[data-native-motion] .parallax-divider-image {
+    animation-name: divider-counter-scroll;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: --divider-scroll;
+    animation-range: cover 0% cover 100%;
+  }
+}
+@keyframes divider-counter-scroll {
+  from { transform: translate3d(0, calc(-1 * var(--divider-travel)), 0); }
+  to { transform: translate3d(0, var(--divider-travel), 0); }
 }

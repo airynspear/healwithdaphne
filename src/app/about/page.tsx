@@ -6,7 +6,7 @@ export const metadata = pageMetadata('About Daphne', 'Meet Daphne Mosko, a Bould
 
 export default function About() {
   return <>
-    <PageIntro eyebrow="MEET DAPHNE" title={bio.title} />
+    <PageIntro eyebrow="MEET DAPHNE" title={bio.title}><h2 className="bio-subheading">{bio.subtitle}</h2></PageIntro>
     <section className="shell grid items-start gap-12 pb-24 md:grid-cols-[0.85fr_1.15fr]">
       <PhotoPlaceholder kind="portrait" className="min-h-[500px]" />
       <div className="article-copy">{bio.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="mt-8"><TextLink href={practice.profileHref} newTab>Read Daphne’s professional bio</TextLink></div><div className="mt-8"><TextLink href="/sessions">Explore my approach</TextLink></div></div>

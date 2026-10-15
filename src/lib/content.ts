@@ -70,7 +70,8 @@ export const approach = [
 ];
 
 export const bio = {
-  "title": "Hi, I’m Daphne. I do things differently.",
+  "title": "Hi, I’m Daphne.",
+  "subtitle": "I do things differently.",
   "paragraphs": [
     "Even in the specialized world of manual therapy, I’m a rare bird. I’ve been training for this work since I was 8 years old. My father, Martin Mosko, was a Rolfer and Buddhist monk. Before I could drive, I was soaking up cutting-edge understandings of the body and mind.",
     "In the years since, I’ve accumulated thousands of hours of training in various healing modalities, apprenticing with and assisting world-class teachers like Tom Myers, Jean-Pierre Barral, Gail Wetzler, and my good friend Gil Hedley. I’ve been a practicing healer since 2003, using techniques such as visceral manipulation, structural integration, craniosacral therapy, myofascial release, manual articular techniques, osteopathic manipulation, and more. I also integrate influences from Joe Dispenza, somatic experience, co-regulating touch, and internal family systems.",

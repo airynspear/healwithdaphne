@@ -1,5 +1,5 @@
 import stones from '../../public/images/stock-images/home/rocks.jpg';
-import flower from '../../public/images/stock-images/home/flower-hands.jpeg';
+import flower from '../../public/images/stock-images/home/flower-hands.jpg';
 import sunlight from '../../public/images/stock-images/home/golden-hands.jpg';
 
 // Decorative stock scenes, not Daphne, her clients, or her office.

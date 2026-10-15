@@ -1,3 +1,4 @@
+import darkHeroArtwork from '../../public/images/hwd-logo-img-dark.png';
 import { BookingButton, ClosingInvitation, PhotoPlaceholder, ResourceLinks, TextLink } from '@/components/ui';
 import { Testimonials } from '@/components/testimonials';
 import { approach, bio, homepageCopy, journey, practice } from '@/lib/content';
@@ -15,7 +16,7 @@ export default function Home() {
         <div className="flex flex-wrap items-center gap-x-8 gap-y-5"><BookingButton /><TextLink href="/sessions">Explore the approach</TextLink></div>
         <ul className="hero-benefits">{homepageCopy.benefits.map(benefit => <li key={benefit}>{benefit}</li>)}</ul>
       </div>
-      <div className="hero-image-wrap"><PhotoPlaceholder className="hero-photo" overlaySrc="/images/hwd-logo-img-light.png" priority /><div className="image-note"><span aria-hidden="true">—</span> Room to pause. Space to listen.</div></div>
+      <div className="hero-image-wrap"><PhotoPlaceholder className="hero-photo" overlaySrc="/images/hwd-logo-img-light.png" darkOverlaySrc={darkHeroArtwork} priority /><div className="image-note"><span aria-hidden="true">—</span> Room to pause. Space to listen.</div></div>
     </section>
 
     <section className="expect-section">

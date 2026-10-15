@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import sessionBodywork from '../../../public/images/stock-images/AdobeStock_545355279.jpeg';
-import healingPath from '../../../public/images/stock-images/AdobeStock_1570358392.jpeg';
+import sessionBodywork from '../../../public/images/stock-images/hands.jpg';
+import healingPath from '../../../public/images/stock-images/path.jpg';
 import { ParallaxDivider } from '@/components/parallax-divider';
 import { ClosingInvitation, PageIntro, TextLink } from '@/components/ui';
 import { Pricing } from '@/components/pricing';

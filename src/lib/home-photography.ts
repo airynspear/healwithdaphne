@@ -1,6 +1,6 @@
-import stones from '../../public/images/stock-images/home/AdobeStock_2193331043.jpeg';
-import flower from '../../public/images/stock-images/home/AdobeStock_917988277.jpeg';
-import sunlight from '../../public/images/stock-images/home/AdobeStock_917988017.jpeg';
+import stones from '../../public/images/stock-images/home/rocks.jpg';
+import flower from '../../public/images/stock-images/home/flower-hands.jpeg';
+import sunlight from '../../public/images/stock-images/home/golden-hands.jpg';
 
 // Decorative stock scenes, not Daphne, her clients, or her office.
 // strength: 0 = static, 1 = visually anchored; 0.8 cancels 80% of page movement.

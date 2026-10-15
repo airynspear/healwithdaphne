@@ -8,9 +8,9 @@ Removed only the superseded overlapping hero collage, its client component, entr
 
 ## Divider locations
 
-1. After the introductory concerns section, before The Approach: `AdobeStock_2193331043.jpeg` (stones, candle, linen, window light).
-2. After Meet Daphne, before Your First Visit: `AdobeStock_917988277.jpeg` (hands holding a flower).
-3. After In Their Words / Testimonials, before Stay Curious / Resources: `AdobeStock_917988017.jpeg` (open hands in sunlight).
+1. After the introductory concerns section, before The Approach: `rocks.jpg` (stones, candle, linen, window light).
+2. After Meet Daphne, before Your First Visit: `flower-hands.jpeg` (hands holding a flower).
+3. After In Their Words / Testimonials, before Stay Curious / Resources: `golden-hands.jpg` (open hands in sunlight).
 
 All are under `public/images/stock-images/home`. These are decorative stock scenes, not Daphne, her clients, or her office, and have empty alt text. Each divider contains exactly one photo and no captions, cards, borders, rounded edges, text, or controls.
 

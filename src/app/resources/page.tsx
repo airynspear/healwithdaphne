@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import resourcesImage from '../../../public/images/stock-images/AdobeStock_2092714528.jpeg';
+import resourcesImage from '../../../public/images/stock-images/meditate.jpg';
 import { pageMetadata } from '@/lib/metadata';
 import { ResourceLinks } from '@/components/ui';
 

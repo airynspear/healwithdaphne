@@ -37,3 +37,7 @@ Preview: `npm run dev`, then http://localhost:3000. Scroll through the full home
 ## Jitter adjustment checks
 
 Lint, TypeScript, and production build passed after reducing heights and repositioning windows. Mocked execution confirms the native path adds no JS scroll listener, fallback scrolling never rewrites top/height, geometry is refreshed on resize, reduced-motion resets, and cleanup removes listeners/frames. Actual browser scroll smoothness remains unverified because no browser tool is available.
+
+## Mobile framing update — October 16, 2026
+
+The two homepage dividers now use `mobileHeight: '60vw'` in `src/lib/home-photography.ts`, rather than full viewport height. This creates landscape windows on phones and shows substantially more of each wide photograph. The flower-and-hands image is centered on mobile. Desktop heights and motion are unchanged. The third entry supplies the hero background and is not a divider. Browser verification of the new crops is still pending.
